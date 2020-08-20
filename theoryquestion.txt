@@ -1,0 +1,141 @@
+Question1: Data Structure
+Data Structure is a way to store and organize data so that it can be used efficiently.For eg-Array, Pointer, Structure, Linked List, Stack, Queue, Graph, Searching, Sorting, Programs, etc.
+
+Question2:Applications of DS
+In general, data structures are used to implement the physical forms of abstract data types. This can be translated into a variety of applications, such as displaying a relational database as a binary tree.
+In programming languages, data structures are used to organize code and information in a digital space. For example, Python lists and dictionaries or JavaScript array and objects are common coding structures used for storing and retrieving information. Data structures are also a crucial part of designing efficient software.
+Data structures are essential for managing large amounts of data, such as information kept in databases or indexing services, efficiently. Proper maintenance of data systems requires the identification of memory allocation, data interrelationships and data processes, all of which data structures help with.
+
+Question3:Advantages of linkedlist
+Linked List is Dynamic data Structure .
+Linked List can grow and shrink during run time.
+Insertion and Deletion Operations are Easier
+Efficient Memory Utilization ,i.e no need to pre-allocate memory
+Faster Access time,can be expanded in constant time without memory overhead
+Linear Data Structures such as Stack,Queue can be easily implemeted using Linked list
+
+
+Question4:Single linked list
+struct node{  
+    int data;  
+    struct node *next;  
+};      
+   
+ 
+struct node *head, *tail = NULL;  
+   
+
+void addNode(int data) {  
+   
+    struct node *newNode = (struct node*)malloc(sizeof(struct node));  
+    newNode->data = data;  
+    newNode->next = NULL;  
+      
+    //Checks if the list is empty  
+    if(head == NULL) {  
+        //If list is empty, both head and tail will point to new node  
+        head = newNode;  
+        tail = newNode;  
+    }  
+    else {  
+       
+        tail->next = newNode;  
+       
+        tail = newNode;  
+    }  
+}  
+   
+
+void display() {  
+
+    struct node *current = head;  
+      
+    if(head == NULL) {  
+        printf("List is empty\n");  
+        return;  
+    }  
+    printf("Nodes of singly linked list: \n");  
+    while(current != NULL) {  
+        //Prints each node by incrementing pointer  
+        printf("%d ", current->data);  
+        current = current->next;  
+    }  
+    printf("\n");  
+}  
+      
+int main()  
+{  
+    //Add nodes to the list  
+    addNode(1);  
+    addNode(2);  
+    addNode(3);  
+    addNode(4);  
+      
+    //Displays the nodes present in the list  
+    display();  
+   
+    return 0;  
+}  
+
+
+Question5: Advantages over singlelinkedlist
+1) A DLL can be traversed in both forward and backward direction.
+2) The delete operation in DLL is more efficient if pointer to the node to be deleted is given.
+3) We can quickly insert a new node before a given node.
+
+Question6: Diffrence between array and stack
+An Array is a collection of items stored at contiguous memory locations. The idea is to store multiple items of the same type together. This makes it easier to calculate the position of each element by simply adding an offset to a base value, i.e., the memory location of the first element of the array (generally denoted by the name of the array).
+Stack:
+A Stack is a linear data structure in which elements can be inserted and deleted only from one side of the list, called the top. A stack follows the LIFO (Last In First Out) principle, i.e., the element inserted at the last is the first element to come out. The insertion of an element into the stack is called push operation, and the deletion of an element from the stack is called pop operation. 
+In stack, we always keep track of the last element present in the list with a pointer called top.
+The diagrammatic representation of stack is given below:
+
+Question7:Min no of queues required
+2
+
+
+Question8:the different types of traversal techniques in a tree?
+In-order 
+In this traversal method, the left subtree is visited first, then the root and later the right sub-tree. We should always remember that every node may represent a subtree itself.
+Pre-order Traversal
+In this traversal method, the root node is visited first, then the left subtree and finally the right subtree.
+
+Post-order Traversal
+In this traversal method, the root node is visited last, hence the name. First we traverse the left subtree, then the right subtree and finally the root node.
+
+Question9: Why it is said that searching a node in a binary search tree is efficient than that of
+a simple binary tree?
+Binary Search Tree allows for fast retrieval of elements stored in the tree as each node key is thoroughly compared with the root node, which discards half of the tree.
+
+
+Question10: Application of Graph
+In Computer science graphs are used to represent the flow of computation.
+Google maps uses graphs for building transportation systems, where intersection of two(or more) roads are considered to be a vertex and the road connecting two vertices is considered to be an edge, thus their navigation system is based on the algorithm to calculate the shortest path between two vertices.
+In Facebook, users are considered to be the vertices and if they are friends then there is an edge running between them. Facebook’s Friend suggestion algorithm uses graph theory. Facebook is an example of undirected graph.
+In World Wide Web, web pages are considered to be the vertices. There is an edge from a page u to other page v if there is a link of page v on page u. This is an example of Directed graph. It was the basic idea behind Google Page Ranking Algorithm.
+In Operating System, we come across the Resource Allocation Graph where each process and resources are considered to be vertices. Edges are drawn from resources to the allocated process, or from requesting process to the requested resource. If this leads to any formation of a cycle then a deadlock will occur.
+
+
+Question11:Can we apply Binary search algorithm to a sorted Linked list
+yes
+
+Question12:when can you tell that memory leak will occur
+In computer science, a memory leak is a type of resource leak that occurs when a computer program incorrectly 
+manages memory allocations in a way that memory which is no longer needed is not released. A memory leak may 
+also happen when an object is stored in memory but cannot be accessed by the running code.
+
+Question13:To check if bt is bt or not
+If a node is a left child, then its key and the keys of the nodes in its right subtree are less than its parent’s key.
+If a node is a right child, then its key and the keys of the nodes in its left subtree are greater than its parent’s key.
+
+Question14:Which data structure is ideal to perform recursion operation and why?
+Stack has the LIFO (Last In First Out) property; it remembers it's ‘caller’. Therefore, it knows to whom it should return when the function has to return. On the other hand, recursion makes use of the system stack for storing the return addresses of the function calls.
+
+Question15:What are some of the most important applications of a Stack?
+Expression Evaluation
+Expression Conversion
+Syntax Parsing
+Backtracking
+Parenthesis Checking
+String Reversal
+Function Call
